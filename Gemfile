@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
-
-
+ruby '2.3.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'
-
+gem 'devise'
+gem 'twitter-bootstrap-rails'
+gem 'devise-bootstrap-views'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.7'
+gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -24,18 +25,15 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+gem 'will_paginate', '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-gem "simple_calendar", "~> 2.0"
-gem 'devise'
-gem 'twitter-bootstrap-rails'
-gem 'devise-bootstrap-views'
 
 group :development, :test do
   gem 'sqlite3'
@@ -46,6 +44,8 @@ group :development, :test do
   
   gem 'spring'
 end
+
+
 
 group :production do
   gem 'rails_12factor'
