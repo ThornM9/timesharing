@@ -1,116 +1,133 @@
 <h1>Show page for schedule</h1>
 
-<div>
+<div class="event-container">
+  Event name:
+  <input id="event-name"/>
+  Day:
+  <select id="event-day">
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+    <option value="Saturday">Saturday</option>
+    <option value="Sunday">Sunday</option>
+  </select>
+
   Start time:
-  <select name="start-time">
-    <option value="0:00">0:00</option>
-    <option value="0:30">0:30</option>
-    <option value="1:00">1:00</option>
-    <option value="1:30">1:30</option>
-    <option value="2:00">2:00</option>
-    <option value="2:30">2:30</option>
-    <option value="3:00">3:00</option>
-    <option value="3:30">3:30</option>
-    <option value="4:00">4:00</option>
-    <option value="4:30">4:30</option>
-    <option value="5:00">5:00</option>
-    <option value="5:30">5:30</option>
-    <option value="6:00">6:00</option>
-    <option value="6:30">6:30</option>
-    <option value="7:00">7:00</option>
-    <option value="7:30">7:30</option>
-    <option value="8:00">8:00</option>
-    <option value="8:30">8:30</option>
-    <option value="9:00">9:00</option>
-    <option value="9:30">9:30</option>
-    <option value="10:00">10:00</option>
-    <option value="10:30">10:30</option>
-    <option value="11:00">11:00</option>
-    <option value="11:30">11:30</option>
-    <option value="12:00">12:00</option>
-    <option value="12:30">12:30</option>
-    <option value="13:00">13:00</option>
-    <option value="13:30">13:30</option>
-    <option value="14:00">14:00</option>
-    <option value="14:30">14:30</option>
-    <option value="15:00">15:00</option>
-    <option value="15:30">15:30</option>
-    <option value="16:00">16:00</option>
-    <option value="16:30">16:30</option>
-    <option value="17:00">17:00</option>
-    <option value="17:30">17:30</option>
-    <option value="18:00">18:00</option>
-    <option value="18:30">18:30</option>
-    <option value="19:00">19:00</option>
-    <option value="19:30">19:30</option>
-    <option value="20:00">20:00</option>
-    <option value="20:30">20:30</option>
-    <option value="21:00">21:00</option>
-    <option value="21:30">21:30</option>
-    <option value="22:00">22:00</option>
-    <option value="22:30">22:30</option>
-    <option value="23:00">23:00</option>
-    <option value="23:30">23:30</option>
-  </select> 
+  <select id="start-time">
+    <option value=0>0:00</option>
+    <option value=1>0:30</option>
+    <option value=2>1:00</option>
+    <option value=3>1:30</option>
+    <option value=4>2:00</option>
+    <option value=5>2:30</option>
+    <option value=6>3:00</option>
+    <option value=7>3:30</option>
+    <option value=8>4:00</option>
+    <option value=9>4:30</option>
+    <option value=10>5:00</option>
+    <option value=11>5:30</option>
+    <option value=12>6:00</option>
+    <option value=13>6:30</option>
+    <option value=14>7:00</option>
+    <option value=15>7:30</option>
+    <option value=16>8:00</option>
+    <option value=17>8:30</option>
+    <option value=18>9:00</option>
+    <option value=19>9:30</option>
+    <option value=20>10:00</option>
+    <option value=21>10:30</option>
+    <option value=22>11:00</option>
+    <option value=23>11:30</option>
+    <option value=24>12:00</option>
+    <option value=25>12:30</option>
+    <option value=26>13:00</option>
+    <option value=27>13:30</option>
+    <option value=28>14:00</option>
+    <option value=29>14:30</option>
+    <option value=30>15:00</option>
+    <option value=31>15:30</option>
+    <option value=32>16:00</option>
+    <option value=33>16:30</option>
+    <option value=34>17:00</option>
+    <option value=35>17:30</option>
+    <option value=36>18:00</option>
+    <option value=37>18:30</option>
+    <option value=38>19:00</option>
+    <option value=39>19:30</option>
+    <option value=40>20:00</option>
+    <option value=41>20:30</option>
+    <option value=42>21:00</option>
+    <option value=43>21:30</option>
+    <option value=44>22:00</option>
+    <option value=45>22:30</option>
+    <option value=46>23:00</option>
+    <option value=47>23:30</option>
+  </select>
 
   End time:
-  <select name="end-time">
-    <option value="0:30">0:30</option>
-    <option value="1:00">1:00</option>
-    <option value="1:30">1:30</option>
-    <option value="2:00">2:00</option>
-    <option value="2:30">2:30</option>
-    <option value="3:00">3:00</option>
-    <option value="3:30">3:30</option>
-    <option value="4:00">4:00</option>
-    <option value="4:30">4:30</option>
-    <option value="5:00">5:00</option>
-    <option value="5:30">5:30</option>
-    <option value="6:00">6:00</option>
-    <option value="6:30">6:30</option>
-    <option value="7:00">7:00</option>
-    <option value="7:30">7:30</option>
-    <option value="8:00">8:00</option>
-    <option value="8:30">8:30</option>
-    <option value="9:00">9:00</option>
-    <option value="9:30">9:30</option>
-    <option value="10:00">10:00</option>
-    <option value="10:30">10:30</option>
-    <option value="11:00">11:00</option>
-    <option value="11:30">11:30</option>
-    <option value="12:00">12:00</option>
-    <option value="12:30">12:30</option>
-    <option value="13:00">13:00</option>
-    <option value="13:30">13:30</option>
-    <option value="14:00">14:00</option>
-    <option value="14:30">14:30</option>
-    <option value="15:00">15:00</option>
-    <option value="15:30">15:30</option>
-    <option value="16:00">16:00</option>
-    <option value="16:30">16:30</option>
-    <option value="17:00">17:00</option>
-    <option value="17:30">17:30</option>
-    <option value="18:00">18:00</option>
-    <option value="18:30">18:30</option>
-    <option value="19:00">19:00</option>
-    <option value="19:30">19:30</option>
-    <option value="20:00">20:00</option>
-    <option value="20:30">20:30</option>
-    <option value="21:00">21:00</option>
-    <option value="21:30">21:30</option>
-    <option value="22:00">22:00</option>
-    <option value="22:30">22:30</option>
-    <option value="23:00">23:00</option>
-    <option value="23:30">23:30</option>
-    <option value="24:00">24:00</option>
-  </select> 
-  <%= link_to 'Submit', '#', class: 'btn btn-success' %> 
+  <select id="end-time">
+    <option value=1>0:30</option>
+    <option value=2>1:00</option>
+    <option value=3>1:30</option>
+    <option value=4>2:00</option>
+    <option value=5>2:30</option>
+    <option value=6>3:00</option>
+    <option value=7>3:30</option>
+    <option value=8>4:00</option>
+    <option value=9>4:30</option>
+    <option value=10>5:00</option>
+    <option value=11>5:30</option>
+    <option value=12>6:00</option>
+    <option value=13>6:30</option>
+    <option value=14>7:00</option>
+    <option value=15>7:30</option>
+    <option value=16>8:00</option>
+    <option value=17>8:30</option>
+    <option value=18>9:00</option>
+    <option value=19>9:30</option>
+    <option value=20>10:00</option>
+    <option value=21>10:30</option>
+    <option value=22>11:00</option>
+    <option value=23>11:30</option>
+    <option value=24>12:00</option>
+    <option value=25>12:30</option>
+    <option value=26>13:00</option>
+    <option value=27>13:30</option>
+    <option value=28>14:00</option>
+    <option value=29>14:30</option>
+    <option value=30>15:00</option>
+    <option value=31>15:30</option>
+    <option value=32>16:00</option>
+    <option value=33>16:30</option>
+    <option value=34>17:00</option>
+    <option value=35>17:30</option>
+    <option value=36>18:00</option>
+    <option value=37>18:30</option>
+    <option value=38>19:00</option>
+    <option value=39>19:30</option>
+    <option value=40>20:00</option>
+    <option value=41>20:30</option>
+    <option value=42>21:00</option>
+    <option value=43>21:30</option>
+    <option value=44>22:00</option>
+    <option value=45>22:30</option>
+    <option value=46>23:00</option>
+    <option value=47>23:30</option>
+    <option value=48>24:00</option>
+  </select>
+
+  Event colour:
+  <input id="color-picker" type="color" value="#FF0000" />
+
+  <button class="submit-button btn btn-success">Submit</button>
 </div>
 
 
 <table class='schedule'>
-  
-  <tr class='row'>
+
+  <tr class='row-top'>
     <th>Time:</th>
     <th>Monday</th>
     <th>Tuesday</th>
@@ -120,534 +137,727 @@
     <th>Saturday</th>
     <th>Sunday</th>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-0'>
     <td>0:00-0:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-1'>
     <td>0:30-1:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-2'>
     <td>1:00-1:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-3'>
     <td>1:30-2:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-4'>
     <td>2:00-2:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-5'>
     <td>2:30-3:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-6'>
     <td>3:00-3:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-7'>
     <td>3:30-4:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-8'>
     <td>4:00-4:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-9'>
     <td>4:30-5:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-10'>
     <td>5:00-5:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-11'>
     <td>5:30-6:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-12'>
     <td>6:00-6:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-13'>
     <td>6:30-7:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-14'>
     <td>7:00-7:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-15'>
     <td>7:30-8:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-16'>
     <td>8:00-8:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-17'>
     <td>8:30-9:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-18'>
     <td>9:00-9:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-19'>
     <td>9:30-10:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-20'>
     <td>10:00-10:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-21'>
     <td>10:30-11:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-22'>
     <td>11:00-11:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-23'>
     <td>11:30-12:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-24'>
     <td>12:00-12:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-25'>
     <td>12:30-13:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-26'>
     <td>13:00-13:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-27'>
     <td>13:30-14:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-28'>
     <td>14:00-14:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-29'>
     <td>14:30-15:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-30'>
     <td>15:00-15:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-31'>
     <td>15:30-16:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-32'>
     <td>16:00-16:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-33'>
     <td>16:30-17:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-34'>
     <td>17:00-17:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-35'>
     <td>17:30-18:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-36'>
     <td>18:00-18:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-37'>
     <td>18:30-19:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-38'>
     <td>19:00-19:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-39'>
     <td>19:30-20:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-40'>
     <td>20:00-20:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-41'>
     <td>20:30-21:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-42'>
     <td>21:00-21:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-43'>
     <td>21:30-22:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-44'>
     <td>22:00-22:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-45'>
     <td>22:30-23:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-46'>
     <td>23:00-23:30</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  <tr class='row'>
+
+  <tr class='row-47'>
     <td>23:30-24:00</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
   </tr>
-  
-  
+
+
 </table>
+
+<script>
+document.querySelector('.submit-button').addEventListener('click', function(event) {
+    var eventName = document.getElementById("event-name")
+    var eventDay = document.getElementById('event-day');
+    var startTime = document.getElementById('start-time');
+    var endTime = document.getElementById('end-time');
+    var colorPicker = document.getElementById('color-picker');
+
+    var name = eventName.value
+    var day = eventDay[eventDay.selectedIndex].text;
+    var start = startTime[startTime.selectedIndex].value;
+    var end = endTime[endTime.selectedIndex].value;
+    var color = colorPicker.value;
+
+
+
+    renderEvents(name, day, start, end, color);
+});
+
+function renderEvents(name, day, start, end, color) {
+  // add an if statement to make sure end is greater than start
+  console.log(start)
+  console.log(end)
+  console.log("row-" + start)
+  startRow = document.querySelector('.row-' + start)
+  endRow = document.querySelector('.row-' + end)
+
+  startCell = startRow.getElementsByClassName(day)
+  startCell[0].innerText = name
+  startCell[0].style.backgroundColor = color
+
+  for (let i = start; i < end; i++) {
+    row = document.querySelector('.row-' + i);
+    cell = row.getElementsByClassName(day);
+    cell[0].style.backgroundColor = color;
+    cell[0].innerText = name
+  }
+}
+
+function returnInt(string) {
+  switch (string) {
+    case "0":
+      int = 0
+      break;
+    case "1":
+      int = 1
+      break;
+    case "2":
+      int = 2
+      break;
+    case "3":
+      int = 3
+      break;
+    case "4":
+      int = 4
+      break;
+    case "5":
+      int = 5
+      break;
+    case "6":
+      int = 6
+      break;
+    case "7":
+      int = 7
+      break;
+    case "8":
+      int = 8
+      break;
+    case "9":
+      int = 9
+      break;
+    case "10":
+      int = 10
+      break;
+    case "11":
+      int = 11
+      break;
+    case "12":
+      int = 12
+      break;
+    case "13":
+      int = 13
+      break;
+    case "14":
+      int = 14
+      break;
+    case "15":
+      int = 15
+      break;
+    case "16":
+      int = 16
+      break;
+    case "17":
+      int = 17
+      break;
+    case "18":
+      int = 18
+      break;
+    case "19":
+      int = 19
+      break;
+    case "20":
+      int = 20
+      break;
+    case "21":
+      int = 21
+      break;
+    case "22":
+      int = 22
+      break;
+    case "23":
+      int = 23
+      break;
+    case "24":
+      int = 24
+      break;
+    case "25":
+      int = 25
+      break;
+    case "26":
+      int = 26
+      break;
+    case "27":
+      int = 27
+      break;
+    case "28":
+      int = 28
+      break;
+    case "29":
+      int = 29
+      break;
+    case "30":
+      int = 30
+      break;
+    case "31":
+      int = 31
+      break;
+    case "32":
+      int = 32
+      break;
+    case "33":
+      int = 33
+      break;
+    case "34":
+      int = 34
+      break;
+    case "35":
+      int = 35
+      break;
+    case "36":
+      int = 36
+      break;
+    case "37":
+      int = 37
+      break;
+    case "38":
+      int = 38
+      break;
+    case "39":
+      int = 39
+      break;
+    case "40":
+      int = 40
+      break;
+    case "41":
+      int = 41
+      break;
+    case "42":
+      int = 42
+      break;
+    case "43":
+      int = 43
+      break;
+    case "44":
+      int = 44
+      break;
+    case "45":
+      int = 45
+      break;
+    case "46":
+      int = 46
+      break;
+    case "47":
+      int = 47
+      break;
+    case "48":
+      int = 48
+      break;
+  }
+  return int
+}
+</script>
