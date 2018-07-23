@@ -665,34 +665,27 @@
     <td class="Saturday"></td>
     <td class="Sunday"></td>
   </tr>
-
-
 </table>
 
 <script>
 document.querySelector('.submit-button').addEventListener('click', function(event) {
-    var eventName = document.getElementById("event-name")
+    var eventName = document.getElementById("event-name");
     var eventDay = document.getElementById('event-day');
     var startTime = document.getElementById('start-time');
     var endTime = document.getElementById('end-time');
     var colorPicker = document.getElementById('color-picker');
 
-    var name = eventName.value
+    var name = eventName.value;
     var day = eventDay[eventDay.selectedIndex].text;
     var start = startTime[startTime.selectedIndex].value;
     var end = endTime[endTime.selectedIndex].value;
     var color = colorPicker.value;
-
-
 
     renderEvents(name, day, start, end, color);
 });
 
 function renderEvents(name, day, start, end, color) {
   // add an if statement to make sure end is greater than start
-  console.log(start)
-  console.log(end)
-  console.log("row-" + start)
   startRow = document.querySelector('.row-' + start)
   endRow = document.querySelector('.row-' + end)
 
@@ -706,158 +699,5 @@ function renderEvents(name, day, start, end, color) {
     cell[0].style.backgroundColor = color;
     cell[0].innerText = name
   }
-}
-
-function returnInt(string) {
-  switch (string) {
-    case "0":
-      int = 0
-      break;
-    case "1":
-      int = 1
-      break;
-    case "2":
-      int = 2
-      break;
-    case "3":
-      int = 3
-      break;
-    case "4":
-      int = 4
-      break;
-    case "5":
-      int = 5
-      break;
-    case "6":
-      int = 6
-      break;
-    case "7":
-      int = 7
-      break;
-    case "8":
-      int = 8
-      break;
-    case "9":
-      int = 9
-      break;
-    case "10":
-      int = 10
-      break;
-    case "11":
-      int = 11
-      break;
-    case "12":
-      int = 12
-      break;
-    case "13":
-      int = 13
-      break;
-    case "14":
-      int = 14
-      break;
-    case "15":
-      int = 15
-      break;
-    case "16":
-      int = 16
-      break;
-    case "17":
-      int = 17
-      break;
-    case "18":
-      int = 18
-      break;
-    case "19":
-      int = 19
-      break;
-    case "20":
-      int = 20
-      break;
-    case "21":
-      int = 21
-      break;
-    case "22":
-      int = 22
-      break;
-    case "23":
-      int = 23
-      break;
-    case "24":
-      int = 24
-      break;
-    case "25":
-      int = 25
-      break;
-    case "26":
-      int = 26
-      break;
-    case "27":
-      int = 27
-      break;
-    case "28":
-      int = 28
-      break;
-    case "29":
-      int = 29
-      break;
-    case "30":
-      int = 30
-      break;
-    case "31":
-      int = 31
-      break;
-    case "32":
-      int = 32
-      break;
-    case "33":
-      int = 33
-      break;
-    case "34":
-      int = 34
-      break;
-    case "35":
-      int = 35
-      break;
-    case "36":
-      int = 36
-      break;
-    case "37":
-      int = 37
-      break;
-    case "38":
-      int = 38
-      break;
-    case "39":
-      int = 39
-      break;
-    case "40":
-      int = 40
-      break;
-    case "41":
-      int = 41
-      break;
-    case "42":
-      int = 42
-      break;
-    case "43":
-      int = 43
-      break;
-    case "44":
-      int = 44
-      break;
-    case "45":
-      int = 45
-      break;
-    case "46":
-      int = 46
-      break;
-    case "47":
-      int = 47
-      break;
-    case "48":
-      int = 48
-      break;
-  }
-  return int
 }
 </script>
