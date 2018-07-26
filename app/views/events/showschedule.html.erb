@@ -674,25 +674,22 @@ document.querySelector('.submit-button').addEventListener('click', function(even
     var startTime = document.getElementById('start-time');
     var endTime = document.getElementById('end-time');
     var colorPicker = document.getElementById('color-picker');
-
     var name = eventName.value;
     var day = eventDay[eventDay.selectedIndex].text;
     var start = startTime[startTime.selectedIndex].value;
     var end = endTime[endTime.selectedIndex].value;
     var color = colorPicker.value;
-
+    
+    postEvent(name, day, start, end, color);
     renderEvents(name, day, start, end, color);
 });
-
 function renderEvents(name, day, start, end, color) {
   // add an if statement to make sure end is greater than start
   startRow = document.querySelector('.row-' + start)
   endRow = document.querySelector('.row-' + end)
-
   startCell = startRow.getElementsByClassName(day)
   startCell[0].innerText = name
   startCell[0].style.backgroundColor = color
-
   for (let i = start; i < end; i++) {
     row = document.querySelector('.row-' + i);
     cell = row.getElementsByClassName(day);
@@ -700,4 +697,13 @@ function renderEvents(name, day, start, end, color) {
     cell[0].innerText = name
   }
 }
+  
+function postEvent(name, day, start, end, color) {
+  $.ajax({
+  type: "POST",
+  url: '/events',
+  data: { event: { event_name: name, event_day: day, start_index: start, end_index: end, event_color: color } }
+  })
+}
+
 </script>
