@@ -122,8 +122,9 @@
   <input id="color-picker" type="color" value="#FF0000" />
 
   <button class="submit-button btn btn-success">Submit</button>
+  
+  <button class="render-schedule btn">Render schedule</button>
 </div>
-
 
 <table class='schedule'>
 
@@ -683,6 +684,11 @@ document.querySelector('.submit-button').addEventListener('click', function(even
     postEvent(name, day, start, end, color);
     renderEvents(name, day, start, end, color);
 });
+  
+document.querySelector('.render-schedule').addEventListener('click', function(event) {
+  callEvents()
+})
+  
 function renderEvents(name, day, start, end, color) {
   // add an if statement to make sure end is greater than start
   startRow = document.querySelector('.row-' + start)
@@ -704,6 +710,20 @@ function postEvent(name, day, start, end, color) {
   url: '/events',
   data: { event: { event_name: name, event_day: day, start_index: start, end_index: end, event_color: color } }
   })
+}
+  
+function callEvents() {
+  <% current_user.events.each do |event| %>
+        jsEventObject = new Object();
+        jsEventObject.event_name =  '<%= event.event_name %>'
+        jsEventObject.event_day = '<%= event.event_day %>'
+        jsEventObject.start_index = '<%= event.start_index %>'
+        jsEventObject.end_index = '<%= event.end_index %>'
+        jsEventObject.color = '<%= event.event_color %>'
+    
+        renderEvents(jsEventObject.event_name, jsEventObject.event_day, jsEventObject.start_index, jsEventObject.end_index, jsEventObject.color)
+  <% end %>
+      
 }
 
 </script>

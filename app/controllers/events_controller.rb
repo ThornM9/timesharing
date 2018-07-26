@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :require_user, except: [:show, :showschedule]
+  before_action :require_user
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   
   def show
@@ -14,10 +14,9 @@ class EventsController < ApplicationController
   
   def create
     @event = Event.new(event_params)
-    @event.user_id = current_user
+    @event.user_id = current_user.id
       if @event.save
         flash[:success] = "Event was successfully saved"
-        redirect_to schedule_path
       else
         render 'new'
       end
