@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180725142549) do
+ActiveRecord::Schema.define(version: 20180803170222) do
 
   create_table "events", force: :cascade do |t|
     t.string  "event_name"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20180725142549) do
     t.integer "end_index"
     t.string  "event_color"
     t.integer "user_id"
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,6 +42,8 @@ ActiveRecord::Schema.define(version: 20180725142549) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

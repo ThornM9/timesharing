@@ -10,6 +10,7 @@ get 'about' => 'pages#about'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 get 'schedule' => 'events#showschedule'
+get 'my_friends' => 'users#my_friends'
 
 Rails.application.routes.draw do
   resources :events
