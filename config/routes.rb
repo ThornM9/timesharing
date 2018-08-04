@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 devise_for :users
+resources :users, only: [:show]
+resources :friendships
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -11,6 +13,8 @@ get 'about' => 'pages#about'
   #   get 'products/:id' => 'catalog#view'
 get 'schedule' => 'events#showschedule'
 get 'my_friends' => 'users#my_friends'
+get 'search_friends' => 'users#search'
+post 'add_friend', to: 'users#add_friend'
 
 Rails.application.routes.draw do
   resources :events
