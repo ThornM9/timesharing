@@ -1,130 +1,131 @@
-<h1>Show page for schedule</h1>
-
 <div class="event-container">
-  Event name:
-  <input id="event-name"/>
-  Day:
-  <select id="event-day">
-    <option value="Monday">Monday</option>
-    <option value="Tuesday">Tuesday</option>
-    <option value="Wednesday">Wednesday</option>
-    <option value="Thursday">Thursday</option>
-    <option value="Friday">Friday</option>
-    <option value="Saturday">Saturday</option>
-    <option value="Sunday">Sunday</option>
-  </select>
+<% if @user.id == current_user.id %>
+    Event name:
+    <input id="event-name"/>
+    Day:
+    <select id="event-day">
+      <option value="Monday">Monday</option>
+      <option value="Tuesday">Tuesday</option>
+      <option value="Wednesday">Wednesday</option>
+      <option value="Thursday">Thursday</option>
+      <option value="Friday">Friday</option>
+      <option value="Saturday">Saturday</option>
+      <option value="Sunday">Sunday</option>
+    </select>
 
-  Start time:
-  <select id="start-time">
-    <option value=0>0:00</option>
-    <option value=1>0:30</option>
-    <option value=2>1:00</option>
-    <option value=3>1:30</option>
-    <option value=4>2:00</option>
-    <option value=5>2:30</option>
-    <option value=6>3:00</option>
-    <option value=7>3:30</option>
-    <option value=8>4:00</option>
-    <option value=9>4:30</option>
-    <option value=10>5:00</option>
-    <option value=11>5:30</option>
-    <option value=12>6:00</option>
-    <option value=13>6:30</option>
-    <option value=14>7:00</option>
-    <option value=15>7:30</option>
-    <option value=16>8:00</option>
-    <option value=17>8:30</option>
-    <option value=18>9:00</option>
-    <option value=19>9:30</option>
-    <option value=20>10:00</option>
-    <option value=21>10:30</option>
-    <option value=22>11:00</option>
-    <option value=23>11:30</option>
-    <option value=24>12:00</option>
-    <option value=25>12:30</option>
-    <option value=26>13:00</option>
-    <option value=27>13:30</option>
-    <option value=28>14:00</option>
-    <option value=29>14:30</option>
-    <option value=30>15:00</option>
-    <option value=31>15:30</option>
-    <option value=32>16:00</option>
-    <option value=33>16:30</option>
-    <option value=34>17:00</option>
-    <option value=35>17:30</option>
-    <option value=36>18:00</option>
-    <option value=37>18:30</option>
-    <option value=38>19:00</option>
-    <option value=39>19:30</option>
-    <option value=40>20:00</option>
-    <option value=41>20:30</option>
-    <option value=42>21:00</option>
-    <option value=43>21:30</option>
-    <option value=44>22:00</option>
-    <option value=45>22:30</option>
-    <option value=46>23:00</option>
-    <option value=47>23:30</option>
-  </select>
+    Start time:
+    <select id="start-time">
+      <option value=0>0:00</option>
+      <option value=1>0:30</option>
+      <option value=2>1:00</option>
+      <option value=3>1:30</option>
+      <option value=4>2:00</option>
+      <option value=5>2:30</option>
+      <option value=6>3:00</option>
+      <option value=7>3:30</option>
+      <option value=8>4:00</option>
+      <option value=9>4:30</option>
+      <option value=10>5:00</option>
+      <option value=11>5:30</option>
+      <option value=12>6:00</option>
+      <option value=13>6:30</option>
+      <option value=14>7:00</option>
+      <option value=15>7:30</option>
+      <option value=16>8:00</option>
+      <option value=17>8:30</option>
+      <option value=18>9:00</option>
+      <option value=19>9:30</option>
+      <option value=20>10:00</option>
+      <option value=21>10:30</option>
+      <option value=22>11:00</option>
+      <option value=23>11:30</option>
+      <option value=24>12:00</option>
+      <option value=25>12:30</option>
+      <option value=26>13:00</option>
+      <option value=27>13:30</option>
+      <option value=28>14:00</option>
+      <option value=29>14:30</option>
+      <option value=30>15:00</option>
+      <option value=31>15:30</option>
+      <option value=32>16:00</option>
+      <option value=33>16:30</option>
+      <option value=34>17:00</option>
+      <option value=35>17:30</option>
+      <option value=36>18:00</option>
+      <option value=37>18:30</option>
+      <option value=38>19:00</option>
+      <option value=39>19:30</option>
+      <option value=40>20:00</option>
+      <option value=41>20:30</option>
+      <option value=42>21:00</option>
+      <option value=43>21:30</option>
+      <option value=44>22:00</option>
+      <option value=45>22:30</option>
+      <option value=46>23:00</option>
+      <option value=47>23:30</option>
+    </select>
 
-  End time:
-  <select id="end-time">
-    <option value=1>0:30</option>
-    <option value=2>1:00</option>
-    <option value=3>1:30</option>
-    <option value=4>2:00</option>
-    <option value=5>2:30</option>
-    <option value=6>3:00</option>
-    <option value=7>3:30</option>
-    <option value=8>4:00</option>
-    <option value=9>4:30</option>
-    <option value=10>5:00</option>
-    <option value=11>5:30</option>
-    <option value=12>6:00</option>
-    <option value=13>6:30</option>
-    <option value=14>7:00</option>
-    <option value=15>7:30</option>
-    <option value=16>8:00</option>
-    <option value=17>8:30</option>
-    <option value=18>9:00</option>
-    <option value=19>9:30</option>
-    <option value=20>10:00</option>
-    <option value=21>10:30</option>
-    <option value=22>11:00</option>
-    <option value=23>11:30</option>
-    <option value=24>12:00</option>
-    <option value=25>12:30</option>
-    <option value=26>13:00</option>
-    <option value=27>13:30</option>
-    <option value=28>14:00</option>
-    <option value=29>14:30</option>
-    <option value=30>15:00</option>
-    <option value=31>15:30</option>
-    <option value=32>16:00</option>
-    <option value=33>16:30</option>
-    <option value=34>17:00</option>
-    <option value=35>17:30</option>
-    <option value=36>18:00</option>
-    <option value=37>18:30</option>
-    <option value=38>19:00</option>
-    <option value=39>19:30</option>
-    <option value=40>20:00</option>
-    <option value=41>20:30</option>
-    <option value=42>21:00</option>
-    <option value=43>21:30</option>
-    <option value=44>22:00</option>
-    <option value=45>22:30</option>
-    <option value=46>23:00</option>
-    <option value=47>23:30</option>
-    <option value=48>24:00</option>
-  </select>
+    End time:
+    <select id="end-time">
+      <option value=1>0:30</option>
+      <option value=2>1:00</option>
+      <option value=3>1:30</option>
+      <option value=4>2:00</option>
+      <option value=5>2:30</option>
+      <option value=6>3:00</option>
+      <option value=7>3:30</option>
+      <option value=8>4:00</option>
+      <option value=9>4:30</option>
+      <option value=10>5:00</option>
+      <option value=11>5:30</option>
+      <option value=12>6:00</option>
+      <option value=13>6:30</option>
+      <option value=14>7:00</option>
+      <option value=15>7:30</option>
+      <option value=16>8:00</option>
+      <option value=17>8:30</option>
+      <option value=18>9:00</option>
+      <option value=19>9:30</option>
+      <option value=20>10:00</option>
+      <option value=21>10:30</option>
+      <option value=22>11:00</option>
+      <option value=23>11:30</option>
+      <option value=24>12:00</option>
+      <option value=25>12:30</option>
+      <option value=26>13:00</option>
+      <option value=27>13:30</option>
+      <option value=28>14:00</option>
+      <option value=29>14:30</option>
+      <option value=30>15:00</option>
+      <option value=31>15:30</option>
+      <option value=32>16:00</option>
+      <option value=33>16:30</option>
+      <option value=34>17:00</option>
+      <option value=35>17:30</option>
+      <option value=36>18:00</option>
+      <option value=37>18:30</option>
+      <option value=38>19:00</option>
+      <option value=39>19:30</option>
+      <option value=40>20:00</option>
+      <option value=41>20:30</option>
+      <option value=42>21:00</option>
+      <option value=43>21:30</option>
+      <option value=44>22:00</option>
+      <option value=45>22:30</option>
+      <option value=46>23:00</option>
+      <option value=47>23:30</option>
+      <option value=48>24:00</option>
+    </select>
 
-  Event colour:
-  <input id="color-picker" type="color" value="#FF0000" />
+    Event colour:
+    <input id="color-picker" type="color" value="#FF0000" />
 
-  <button class="submit-button btn btn-success">Submit</button>
-  
-  <button class="render-schedule btn">Render schedule</button>
+    <button class="submit-button btn btn-success">Submit</button>
+
+<% end %>
+<button class="render-schedule btn">Render schedule</button>
 </div>
+
 <div class='schedule-container'>
 <table class='schedule'>
 
@@ -670,6 +671,7 @@
 </div>
 
 <script>
+<% if @user.id == current_user.id %>
 document.querySelector('.submit-button').addEventListener('click', function(event) {
     var eventName = document.getElementById("event-name");
     var eventDay = document.getElementById('event-day');
@@ -685,6 +687,7 @@ document.querySelector('.submit-button').addEventListener('click', function(even
     postEvent(name, day, start, end, color);
     renderEvents(name, day, start, end, color);
 });
+<% end %>
   
 document.querySelector('.render-schedule').addEventListener('click', function(event) {
   callEvents()
@@ -715,7 +718,7 @@ function postEvent(name, day, start, end, color) {
 }
   
 function callEvents() {
-  <% current_user.events.each do |event| %>
+  <% @user.events.each do |event| %>
         jsEventObject = new Object();
         jsEventObject.event_name =  '<%= event.event_name %>'
         jsEventObject.event_day = '<%= event.event_day %>'

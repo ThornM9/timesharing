@@ -30,4 +30,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user_events = @user.events
   end
+  
+  def schedule
+    @user = current_user
+  end
 end
