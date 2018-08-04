@@ -2,6 +2,8 @@
 <% if @user.id == current_user.id %>
     Event name:
     <input id="event-name"/>
+    Description:
+    <input id="event-description"/>
     Day:
     <select id="event-day">
       <option value="Monday">Monday</option>
@@ -726,7 +728,18 @@ function callEvents() {
         jsEventObject.end_index = '<%= event.end_index %>'
         jsEventObject.color = '<%= event.event_color %>'
     
-        renderEvents(jsEventObject.event_name, jsEventObject.event_day, jsEventObject.start_index, jsEventObject.end_index, jsEventObject.color)
+        startRow = document.querySelector('.row-' + jsEventObject.start_index)
+        endRow = document.querySelector('.row-' + jsEventObject.end_index)
+        startCell = startRow.getElementsByClassName(jsEventObject.event_day)
+        startCell[0].innerHTML = '<%= link_to event.event_name, event_path(event) %>'
+        startCell[0].style.backgroundColor = jsEventObject.color
+        for (let i = jsEventObject.start_index; i < jsEventObject.end_index; i++) {
+          row = document.querySelector('.row-' + i);
+          cell = row.getElementsByClassName(jsEventObject.event_day);
+          cell[0].style.backgroundColor = jsEventObject.color;
+
+          cell[0].innerHTML = '<%= link_to event.event_name, event_path(event) %>'
+        }
   <% end %>
       
 }
