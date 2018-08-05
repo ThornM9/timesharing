@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :require_user
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :require_same_user, only: [:destroy]
   
   def show
   end
@@ -26,7 +27,6 @@ class EventsController < ApplicationController
     @event.destroy
     redirect_to schedule_path
     flash[:danger] = "Event was successfully destroyed"
-
   end
   
   private

@@ -3,3 +3,6 @@
 <p>
   <%= @event.event_name %> happens on <%= @event.event_day %>, starts at <%= @event.start_index %>, ends at <%= @event.end_index %>
 </p>
+
+<%= link_to "Delete event", event_path(@event), method: :delete,
+              data: { confirm: "Are you sure?" }, class: "btn btn-xs btn-danger" %>
