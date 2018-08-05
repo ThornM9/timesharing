@@ -692,7 +692,7 @@ document.querySelector('.submit-button').addEventListener('click', function(even
 <% end %>
   
 document.querySelector('.render-schedule').addEventListener('click', function(event) {
-  <% if current_user.friendships.find_by(friend_id: @user.id) %>
+  <% if current_user.friendships.find_by(friend_id: @user.id) or @user.id == current_user.id %>
     callEvents()
   <% else %>
     <% flash.now[:danger] = "You can only view the schedules of your friends" %>

@@ -7,4 +7,9 @@
   <dd><%= @user.email %></dd>
 </dl>
 
+<% if @user.id == current_user.id %>
+  <%= link_to "Edit your details", edit_user_registration_path, class: "btn btn-xs btn-primary" %>
+<% end %>
+
+<%= render 'projects/projectlist' %>
 <%= render 'events/schedule' %>

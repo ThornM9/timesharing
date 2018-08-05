@@ -1,0 +1,34 @@
+<% if @user.projects.size > 0 %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th colspan="3" class="page-header">
+          <h2>Projects</h2>
+        </th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.projects.each do |project| %>
+        <tr>
+          <td><%= project.name %></td>
+          <td>
+            <%= link_to "View Project", project_path(project), class: "btn btn-primary btn-xs" %>
+            <%= link_to "Delete Project", project_path(project), method: :delete,
+              data: { confirm: "Are you sure? This will permanently delete this project" }, class: "btn btn-xs btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  <table>  
+<% else %>
+  <div class="row col-lg-12">
+    <p class="lead">
+      You don't have any projects yet, please add some!
+      <%= link_to "New Project", new_project_path, class: "btn btn-success btn-xs" %>
+    </p>
+  </div>
+<% end %>

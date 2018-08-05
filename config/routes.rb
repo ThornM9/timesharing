@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 devise_for :users
 resources :users, only: [:show]
+resources :projects
 resources :friendships
 resources :events, only: [:showschedule, :show, :destroy]
+resources :projects_users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
