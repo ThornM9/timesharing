@@ -25,10 +25,16 @@
     </tbody>
   <table>  
 <% else %>
-  <div class="row col-lg-12">
+  <% if @user.id == current_user.id %>
+    <div class="row col-lg-12">
+      <p class="lead">
+        You don't have any projects yet, please add some!
+        <%= link_to "New Project", new_project_path, class: "btn btn-success btn-xs" %>
+      </p>
+    </div>
+  <% else %>
     <p class="lead">
-      You don't have any projects yet, please add some!
-      <%= link_to "New Project", new_project_path, class: "btn btn-success btn-xs" %>
+      This user has no projects
     </p>
-  </div>
+  <% end %>
 <% end %>
