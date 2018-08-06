@@ -5,6 +5,9 @@ resources :projects
 resources :friendships
 resources :events, only: [:showschedule, :show, :destroy]
 resources :projects_users
+resources :projects do
+  post 'add_user', on: :member
+end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -19,6 +22,7 @@ get 'my_friends' => 'users#my_friends'
 get 'search_friends' => 'users#search'
 post 'add_friend', to: 'users#add_friend'
 get 'event' => 'events#show'
+delete 'user_project_delete' => 'projects#destroy'
 
 Rails.application.routes.draw do
   resources :events
