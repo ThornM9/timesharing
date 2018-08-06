@@ -22,7 +22,8 @@ get 'my_friends' => 'users#my_friends'
 get 'search_friends' => 'users#search'
 post 'add_friend', to: 'users#add_friend'
 get 'event' => 'events#show'
-delete 'user_project_delete' => 'projects#destroy'
+delete 'user_project_delete' => 'projects#destroy_association'
+delete 'project_delete' => 'projects#destroy'
 
 Rails.application.routes.draw do
   resources :events

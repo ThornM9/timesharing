@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :require_user
-  before_action :set_project, only: [:show, :update]
+  before_action :set_project, only: [:show, :update, :destroy]
   
   def index
   end
@@ -44,7 +44,7 @@ class ProjectsController < ApplicationController
     redirect_to project_path(@project)
   end
   
-  def destroy
+  def destroy_association
     @project = Project.find(params[:project_id])
     @membership = @project.users.where(id: params[:friend_id]).first
     @project.users.destroy(@membership)
