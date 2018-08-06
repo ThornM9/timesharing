@@ -11,6 +11,28 @@
   border: 1px solid black;
 }
 
+.project-schedule {
+  border: 1px solid black;
+  width: 1000px;
+}
+
+.project-schedule th,
+.project-schedule td {
+  border: 1px solid black;
+}
+
+.project-users {
+  display: flex;
+}
+.add-users {
+  width: 50%;
+}
+
+.project-current-users {
+  width: 50%;
+  padding-left: 100px;
+}
+
 .no-padding {
   padding: 0 !important;
 }
