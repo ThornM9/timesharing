@@ -13,4 +13,4 @@
 <% end %>
 
 <%= render 'projects/projectlist' %>
-<%= render 'events/schedule' %>
+<%= link_to "My Schedule", schedule_path(current_user), class: "btn btn-success" %>
