@@ -1,5 +1,5 @@
 <h1><%= @project.name %></h1>
-
+<% if current_user.projects.find_by(id: @project.id)%>
 <div class="project-users">
   <div class="add-users">
     <% if current_user.friends.size > 0 %>
@@ -81,7 +81,6 @@
   </div>
 </div>
     
-<button class="render-schedule btn">Render schedule</button>
 
 <div class='project-schedule-container'>
 <table class='project-schedule'>
@@ -627,16 +626,7 @@
 </table>
 </div>
 
-<script>
-  
-document.querySelector('.render-schedule').addEventListener('click', function(event) {
-  <% if current_user.projects.find_by(id: @project.id)%>
-    callEvents()
-  <% else %>
-    <% flash.now[:danger] = "You can only view the schedules of projects you are in" %>
-  <% end %>
-})
-  
+<script>  
 function callEvents() {
   <% @project.users.each do |user| %>
     <% user.events.each do |event| %>
@@ -664,4 +654,589 @@ function callEvents() {
       
 }
 
+callEvents()
+
 </script>
+
+<% @project.users.each do |user| %>
+
+<h3><%= user.full_name %></h3>
+
+<div class='schedule-container'>
+<table class='schedule'>
+
+  <tr class='row-top'>
+    <th>Time:</th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+    <th>Saturday</th>
+    <th>Sunday</th>
+  </tr>
+
+  <tr class=<%= "row-0" + "-" + user.id.to_s %>>
+    <td>0:00-0:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-1" + "-" + user.id.to_s %>>
+    <td>0:30-1:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-2" + "-" + user.id.to_s %>>
+    <td>1:00-1:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-3" + "-" + user.id.to_s %>>
+    <td>1:30-2:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-4" + "-" + user.id.to_s %>>
+    <td>2:00-2:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-5" + "-" + user.id.to_s %>>
+    <td>2:30-3:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-6" + "-" + user.id.to_s %>>
+    <td>3:00-3:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-7" + "-" + user.id.to_s %>>
+    <td>3:30-4:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-8" + "-" + user.id.to_s %>>
+    <td>4:00-4:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-9" + "-" + user.id.to_s %>>
+    <td>4:30-5:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-10" + "-" + user.id.to_s %>>
+    <td>5:00-5:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-11" + "-" + user.id.to_s %>>
+    <td>5:30-6:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-12" + "-" + user.id.to_s %>>
+    <td>6:00-6:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-13" + "-" + user.id.to_s %>>
+    <td>6:30-7:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-14" + "-" + user.id.to_s %>>
+    <td>7:00-7:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-15" + "-" + user.id.to_s %>>
+    <td>7:30-8:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-16" + "-" + user.id.to_s %>>
+    <td>8:00-8:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-17" + "-" + user.id.to_s %>>
+    <td>8:30-9:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-18" + "-" + user.id.to_s %>>
+    <td>9:00-9:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-19" + "-" + user.id.to_s %>>
+    <td>9:30-10:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-20" + "-" + user.id.to_s %>>
+    <td>10:00-10:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-21" + "-" + user.id.to_s %>>
+    <td>10:30-11:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-22" + "-" + user.id.to_s %>>
+    <td>11:00-11:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-23" + "-" + user.id.to_s %>>
+    <td>11:30-12:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-24" + "-" + user.id.to_s %>>
+    <td>12:00-12:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-25" + "-" + user.id.to_s %>>
+    <td>12:30-13:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-26" + "-" + user.id.to_s %>>
+    <td>13:00-13:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-27" + "-" + user.id.to_s %>>
+    <td>13:30-14:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-28" + "-" + user.id.to_s %>>
+    <td>14:00-14:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-29" + "-" + user.id.to_s %>>
+    <td>14:30-15:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-30" + "-" + user.id.to_s %>>
+    <td>15:00-15:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-31" + "-" + user.id.to_s %>>
+    <td>15:30-16:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-32" + "-" + user.id.to_s %>>
+    <td>16:00-16:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-33" + "-" + user.id.to_s %>>
+    <td>16:30-17:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-34" + "-" + user.id.to_s %>>
+    <td>17:00-17:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-35" + "-" + user.id.to_s %>>
+    <td>17:30-18:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-36" + "-" + user.id.to_s %>>
+    <td>18:00-18:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-37" + "-" + user.id.to_s %>>
+    <td>18:30-19:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-38" + "-" + user.id.to_s %>>
+    <td>19:00-19:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-39" + "-" + user.id.to_s %>>
+    <td>19:30-20:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-40" + "-" + user.id.to_s %>>
+    <td>20:00-20:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-41" + "-" + user.id.to_s %>>
+    <td>20:30-21:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-42" + "-" + user.id.to_s %>>
+    <td>21:00-21:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-43" + "-" + user.id.to_s %>>
+    <td>21:30-22:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-44" + "-" + user.id.to_s %>>
+    <td>22:00-22:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-45" + "-" + user.id.to_s %>>
+    <td>22:30-23:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-46" + "-" + user.id.to_s %>>
+    <td>23:00-23:30</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+
+  <tr class=<%= "row-47" + "-" + user.id.to_s %>>
+    <td>23:30-24:00</td>
+    <td class="Monday"></td>
+    <td class="Tuesday"></td>
+    <td class="Wednesday"></td>
+    <td class="Thursday"></td>
+    <td class="Friday"></td>
+    <td class="Saturday"></td>
+    <td class="Sunday"></td>
+  </tr>
+</table>
+</div>
+
+<script>  
+function callEvents() {
+  <% user.events.each do |event| %>
+        jsEventObject = new Object();
+        jsEventObject.event_name =  '<%= event.event_name %>'
+        jsEventObject.event_day = '<%= event.event_day %>'
+        jsEventObject.start_index = '<%= event.start_index %>'
+        jsEventObject.end_index = '<%= event.end_index %>'
+        jsEventObject.color = '<%= event.event_color %>'
+        jsEventObject.user_id = '<%= user.id %>'
+    
+        startRow = document.querySelector('.row-' + jsEventObject.start_index + "-" + jsEventObject.user_id)
+        endRow = document.querySelector('.row-' + jsEventObject.end_index + "-" + jsEventObject.user_id)
+        startCell = startRow.getElementsByClassName(jsEventObject.event_day)
+        startCell[0].innerHTML = '<%= link_to event.event_name, event_path(event) %>'
+        startCell[0].style.backgroundColor = jsEventObject.color
+        for (let i = jsEventObject.start_index; i < jsEventObject.end_index; i++) {
+          row = document.querySelector('.row-' + i + "-" + jsEventObject.user_id);
+          cell = row.getElementsByClassName(jsEventObject.event_day);
+          cell[0].style.backgroundColor = jsEventObject.color;
+
+          cell[0].innerHTML = '<%= link_to event.event_name, event_path(event) %>'
+        }
+  <% end %>
+}
+  
+console.log("Hello")
+callEvents()
+
+</script>
+<% end %>
+<% else %>
+  <% flash.now[:danger] = "You can only view the schedules of projects you are in" %>
+<% end %>
