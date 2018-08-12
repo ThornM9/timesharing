@@ -19,6 +19,7 @@ class EventsController < ApplicationController
       if @event.save
         flash[:success] = "Event was successfully saved"
       else
+        flash.now[:danger] = "Event wasn't saved. This is either because you currently aren't signed in, or the event wasn't given a name"
         render 'new'
       end
   end
