@@ -2,17 +2,17 @@ class EventsController < ApplicationController
   before_action :require_user
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :require_same_user, only: [:destroy]
-  
+
   def show
   end
-  
+
   def showschedule
   end
-  
+
   def new
     @event = Event.new
   end
-  
+
   def create
     @event = Event.new(event_params)
     @event.user_id = current_user.id
@@ -23,13 +23,13 @@ class EventsController < ApplicationController
         render 'new'
       end
   end
-  
+
   def destroy
     @event.destroy
     redirect_to schedule_path
     flash[:danger] = "Event was successfully destroyed"
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
@@ -38,9 +38,9 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:event_name, :event_day, :start_index, :end_index, :event_color)
+      params.require(:event).permit(:event_name, :event_day, :start_index, :end_index, :event_color, :description)
     end
-  
+
     def require_same_user
       if current_user != @event.user
         flash[:danger] = "You can only edit or delete your own events"
