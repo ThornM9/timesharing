@@ -125,7 +125,6 @@
     <button class="submit-button btn btn-success">Submit</button>
 
 <% end %>
-<button class="render-schedule btn">Render schedule</button>
 </div>
 
 <div class='schedule-container'>
@@ -673,36 +672,10 @@
 </div>
 
 <script>
-<% if @user.id == current_user.id %>
-document.querySelector('.submit-button').addEventListener('click', function(event) {
-    var eventName = document.getElementById("event-name");
-    var eventDay = document.getElementById('event-day');
-    var startTime = document.getElementById('start-time');
-    var endTime = document.getElementById('end-time');
-    var colorPicker = document.getElementById('color-picker');
-    var descriptionField = document.getElementById('event-description');
-    var name = eventName.value;
-    var day = eventDay[eventDay.selectedIndex].text;
-    var start = startTime[startTime.selectedIndex].value;
-    var end = endTime[endTime.selectedIndex].value;
-    var color = colorPicker.value;
-    var describe = descriptionField.value;
-
-    postEvent(name, day, start, end, color, describe);
-    renderEvents(name, day, start, end, color);
-});
-<% end %>
-
-document.querySelector('.render-schedule').addEventListener('click', function(event) {
-  <% if current_user.friendships.find_by(friend_id: @user.id) or @user.id == current_user.id %>
-    callEvents()
-  <% else %>
-    <% flash.now[:danger] = "You can only view the schedules of your friends" %>
-  <% end %>
-})
 
 function renderEvents(name, day, start, end, color) {
   // add an if statement to make sure end is greater than start
+  console.log("rendering");
   startRow = document.querySelector('.row-' + start)
   endRow = document.querySelector('.row-' + end)
   startCell = startRow.getElementsByClassName(day)
@@ -726,6 +699,7 @@ function postEvent(name, day, start, end, color, describe) {
 }
 
 function callEvents() {
+  console.log("called");
   <% @user.events.each do |event| %>
         jsEventObject = new Object();
         jsEventObject.event_name =  '<%= event.event_name %>'
@@ -749,5 +723,33 @@ function callEvents() {
   <% end %>
 
 }
+
+$(document).ready(function (e) {
+  <% if @user.id == current_user.id %>
+  document.querySelector('.submit-button').addEventListener('click', function(event) {
+      var eventName = document.getElementById("event-name");
+      var eventDay = document.getElementById('event-day');
+      var startTime = document.getElementById('start-time');
+      var endTime = document.getElementById('end-time');
+      var colorPicker = document.getElementById('color-picker');
+      var descriptionField = document.getElementById('event-description');
+      var name = eventName.value;
+      var day = eventDay[eventDay.selectedIndex].text;
+      var start = startTime[startTime.selectedIndex].value;
+      var end = endTime[endTime.selectedIndex].value;
+      var color = colorPicker.value;
+      var describe = descriptionField.value;
+
+      postEvent(name, day, start, end, color, describe);
+      renderEvents(name, day, start, end, color);
+  });
+  <% end %>
+
+  <% if current_user.friendships.find_by(friend_id: @user.id) or @user.id == current_user.id %>
+    callEvents()
+  <% else %>
+    <% flash.now[:danger] = "You can only view the schedules of your friends" %>
+  <% end %>
+})
 
 </script>
